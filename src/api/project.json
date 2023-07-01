@@ -1,0 +1,52 @@
+[
+    {
+        "title": "E-Commerce",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JQuery",
+            "CodeIgniter",
+            "Stripe",
+            "API",
+            "AJAX"
+        ],
+        "link": "https://youtube.com/embed/wxtu9N6LRp8"
+    },
+    {
+        "title": "Multiplayer Game",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JQuery",
+            "ExpressJS",
+            "SocketIO",
+            "NodeJS"
+        ],
+        "link": "https://youtube.com/embed/DP5ME8rbvTw"
+    },
+    {
+        "title": "Classroom",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "Ruby on Rails",
+            "Bootstrap",
+            "Ruby",
+            "JQuery",
+            "SQLite"
+        ],
+        "link": "https://youtube.com/embed/KoW69iXbuAs"
+    },
+    {
+        "title": "Movie App",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "ReactJS",
+            "TMDB API",
+            "React Bootstrap",
+            "NodeJS"
+        ],
+        "link": "https://youtube.com/embed/6zhyMK7FObs"
+    }
+]
