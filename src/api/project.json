@@ -10,7 +10,7 @@
             "API",
             "AJAX"
         ],
-        "link": "https://youtube.com/embed/wxtu9N6LRp8"
+        "link": "wxtu9N6LRp8"
     },
     {
         "title": "Multiplayer Game",
@@ -22,7 +22,7 @@
             "SocketIO",
             "NodeJS"
         ],
-        "link": "https://youtube.com/embed/DP5ME8rbvTw"
+        "link": "DP5ME8rbvTw"
     },
     {
         "title": "Classroom",
@@ -35,7 +35,7 @@
             "JQuery",
             "SQLite"
         ],
-        "link": "https://youtube.com/embed/KoW69iXbuAs"
+        "link": "KoW69iXbuAs"
     },
     {
         "title": "Movie App",
@@ -47,6 +47,6 @@
             "React Bootstrap",
             "NodeJS"
         ],
-        "link": "https://youtube.com/embed/6zhyMK7FObs"
+        "link": "6zhyMK7FObs"
     }
 ]

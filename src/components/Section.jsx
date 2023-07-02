@@ -13,7 +13,9 @@ import certificateData from '../api/certificates.json';
 import FormContact from './FormContact';
 import ImageListItem from '@mui/material/ImageListItem';
 import Divider from '@mui/material/Divider';
-import ImageList from '@mui/material/ImageList';
+import github from '../assets/img/github.png';
+import gmail from '../assets/img/gmail.png';
+import linkedin from '../assets/img/linkedin.png';
 
 const WhatUsePaper = ({ title, languages }) => {
     return (
@@ -36,7 +38,7 @@ const CertificationCard = ({ title, year }) => {
             </Typography>
             <Typography variant="body2">
                 {certificateData.map((item) => (
-                    <Link key={item.link + '_certificateLink'} href={item.link} rel='noreferrer' target='_blank' sx={{ my: 1, fontWeight: 'bold', display: 'block' }}>{item.title}</Link>
+                    <Link className='certificate-link' key={item.link + '_certificateLink'} href={item.link} rel='noreferrer' target='_blank' sx={{ my: 1, fontWeight: 'bold', display: 'block', fontSize: 'medium' }}>{item.title}</Link>
                 ))}
             </Typography>
         </Paper>
@@ -48,17 +50,17 @@ function Section() {
         {
             title: 'Github',
             link: 'https://github.com/Ryan-Cruiz/',
-            img: 'github.png'
+            img: github
         },
         {
             title: 'LinkedIn',
             link: 'https://www.linkedin.com/in/ryan-cruiz-9800a1243/',
-            img: 'linkedin.png'
+            img: linkedin
         },
         {
             title: 'Gmail',
             link: 'ryancruiz97@gmail.com',
-            img: 'gmail.png'
+            img: gmail
         },
 
     ];
@@ -164,11 +166,11 @@ function Section() {
                         spacing={2}
                     >
                         {contact_img.map((item) => (
-                            <Link href={item.img === 'gmail.png' ? 'mailto:' + item.link : item.link} key={item.img} target='_blank' sx={{ color: 'whitesmoke' }}>
+                            <Link href={item.title === 'gmail' ? 'mailto:' + item.link : item.link} key={item.img} target='_blank' sx={{ color: 'whitesmoke' }}>
                                 <ImageListItem >
                                     <img
-                                        src={`./src/assets/img/${item.img}`}
-                                        srcSet={`./src/assets/img/${item.img}`}
+                                        src={`${item.img}`}
+                                        srcSet={`${item.img}`}
                                         alt={item.img}
                                         loading="lazy"
                                         style={{ width: '30px', height: '30px' }}
