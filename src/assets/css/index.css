@@ -14,3 +14,17 @@
         display: block;
     }
 }
+
+#root {
+    /* background-color: #9DBCBC; */
+}
+
+.full-bleed {
+    box-shadow: 0 0 0 100vmax #212121;
+    clip-path: inset(0 -100vmax);
+}
+
+.inverse {
+    background-color: #212121;
+    color: whitesmoke;
+}
