@@ -22,7 +22,7 @@ const WhatUsePaper = ({ title, languages }) => {
         <Paper elevation={1} sx={{ p: 1, textAlign: 'start', border: '1px solid #212121' }}>
             <div style={{ fontWeight: "bold", textAlign: 'start', marginBottom: '.5rem' }} > {title}:</div>
             {languages.map(item => (
-                <Chip key={item + '_chip'} color="info" label={item} sx={{ margin: '.5px' }} />
+                <Chip key={item + '_chip'} color="primary" label={item} sx={{ margin: '.5px' }} />
             ))}
         </Paper>
     )
@@ -85,7 +85,7 @@ function Section() {
                             </Box>
                         </Grid>
                         <Grid item md={6} sx={{ textAlign: 'center' }} className='img-profile'>
-                            <img src={profile} alt="Ryan's face" style={{ borderRadius: '50%' }} />
+                            <img src={profile} alt="Ryan's face" style={{ borderRadius: '50%', width: '300px', height: '300px' }} />
                         </Grid>
                     </Grid>
                 </Box>
@@ -140,7 +140,7 @@ function Section() {
                     <FormContact />
                 </Box>
             </Box >
-            <Box component='footer' className='inverse full-bleed'>
+            <Box component='footer' className='inverse full-bleed' sx={{ p: 5 }}>
                 <Stack
                     direction="column"
                     justifyContent="center"
@@ -154,9 +154,9 @@ function Section() {
                         alignItems="stretch"
                         spacing={2}
                     >
-                        <Link href="#about">About</Link>
-                        <Link href="/#projects" >Projects</Link>
-                        <Link href="/#contact" >Contact</Link>
+                        <Link href="#about" sx={{ color: 'whitesmoke' }}>About</Link>
+                        <Link href="/#projects" sx={{ color: 'whitesmoke' }}>Projects</Link>
+                        <Link href="/#contact" sx={{ color: 'whitesmoke' }}>Contact</Link>
                     </Stack>
                     <Divider color='whitesmoke' />
                     <Stack
@@ -167,15 +167,13 @@ function Section() {
                     >
                         {contact_img.map((item) => (
                             <Link href={item.title === 'gmail' ? 'mailto:' + item.link : item.link} key={item.img} target='_blank' sx={{ color: 'whitesmoke' }}>
-                                <ImageListItem >
-                                    <img
-                                        src={`${item.img}`}
-                                        srcSet={`${item.img}`}
-                                        alt={item.img}
-                                        loading="lazy"
-                                        style={{ width: '30px', height: '30px' }}
-                                    />
-                                </ImageListItem>
+                                <img
+                                    src={`${item.img}`}
+                                    srcSet={`${item.img}`}
+                                    alt={item.img}
+                                    loading="lazy"
+                                    style={{ width: '30px', height: '30px' }}
+                                />
                             </Link>
                         ))}
                     </Stack>
@@ -185,8 +183,8 @@ function Section() {
                         alignItems="stretch"
                         spacing={2}
                     >
-                        <Typography variant='body2' sx={{ textAlign: 'center' }}>Powered By <Link href='https://vercel.com/'>Vercel</Link></Typography>
-                        <Typography variant='body2' sx={{ textAlign: 'center' }}>© 2023 Ryan's Portfolio</Typography>
+                        <Typography variant='body1' sx={{ textAlign: 'center' }}>Powered By <Link sx={{ color: 'whitesmoke' }} href='https://vercel.com/'>Vercel</Link></Typography>
+                        <Typography variant='body1' sx={{ textAlign: 'center' }}>© 2023 Ryan's Portfolio</Typography>
                     </Stack>
 
                 </Stack >

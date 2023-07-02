@@ -12,10 +12,11 @@ function ProjectCard({ technologies, title, link }) {
         var vplayer = document.querySelectorAll(".vplayer");
 
         for (var i = 0; i < vplayer.length; i++) {
-            console.log(vplayer[i].dataset.v);
+            // console.log(vplayer[i].dataset.v);
             var source = "https://img.youtube.com/vi/" + vplayer[i].dataset.v + "/sddefault.jpg";
 
             var image = new Image();
+            image.alt = vplayer[i].dataset.v;
             image.src = source;
             image.addEventListener("load", function () {
                 vplayer[i].appendChild(image);
@@ -46,7 +47,7 @@ function ProjectCard({ technologies, title, link }) {
                         </Typography>
                         {technologies.map(v => {
                             return (
-                                <Chip key={v + '_technologies'} label={v} color="info" sx={{ margin: '2px' }} />
+                                <Chip key={v + '_technologies'} label={v} color="primary" sx={{ margin: '2px' }} />
                             )
                         })}
 
