@@ -3,13 +3,18 @@
 @import url('@fontsource/roboto/500.css');
 @import url('@fontsource/roboto/700.css');
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 256px) {
     .img-profile {
         display: none;
     }
 
     .certificate-link {
         font-size: xx-large;
+    }
+
+    #about-container {
+        width: 100%;
+        margin: 1rem 0;
     }
 }
 

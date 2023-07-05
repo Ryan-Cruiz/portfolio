@@ -11,7 +11,6 @@ import projectData from '../api/project.json';
 import skillsData from '../api/whatuse.json';
 import certificateData from '../api/certificates.json';
 import FormContact from './FormContact';
-import ImageListItem from '@mui/material/ImageListItem';
 import Divider from '@mui/material/Divider';
 import github from '../assets/img/github.png';
 import gmail from '../assets/img/gmail.png';
@@ -69,7 +68,7 @@ function Section() {
     return (
         <>
             <Box component="main" sx={{ p: 3 }} >
-                <Box component='div' className='inverse full-bleed' sx={{ p: 5, mb: 5 }}>
+                <Box component='div' className='inverse full-bleed' sx={{ py: 5, mb: 5 }}>
                     <Grid id='about' container spacing={2} justifyContent="center" alignItems="center" sx={{ marginTop: '3rem' }}>
                         <Grid item >
                             <Box component='div' style={{ float: 'right' }}>
@@ -91,17 +90,19 @@ function Section() {
                 </Box>
                 <Box sx={{ my: 5, textAlign: 'center' }}>
                     <Typography variant='h4' sx={{ fontWeight: 'bold', textAlign: 'center' }}>About Me</Typography>
-                    <Paper elevation={3} sx={{ width: '80%', margin: '1rem auto', p: 2, border: '1px solid #212121' }} >
+                    <Paper elevation={3} id='about-container' sx={{ width: '80%', margin: '1rem auto', p: 2, border: '1px solid #212121' }} >
                         <Typography variant='body1'>
-                            I am aspiring Software Developer based in Caloocan, Philippines. Proficient
-                            in both front-end and back-end techonology. My goal is to have more solid knowledge regarding application
-                            development, especially in web application development through employment.
+                            I am an aspiring Software Developer based in Caloocan, Philippines.
+                            Proficient both in front-end and back-end technology.
+                            My goal is to gain more solid knowledge regarding developing applications,
+                            especially web application development, through employment.
                         </Typography>
                         <Typography variant='body1' sx={{ mt: 2 }}>
-                            I am Currently Studying at Golden Link College with course of Bachelor of Infomartion Technology.
-                            I've graduated last October 2022 at Village88 Bootcamp located in La Union, Philippines which teaches full
-                            stack in 3.5 months for free. I am extremly passionate of learning new technologies and am always looking
-                            for opportunities to further expand my skills and grow as a developer.
+                            I am a 3rd year student at Golden Link College for a Bachelor of Science in Information Technology.
+                            I graduated from Village88 Bootcamp in October 2022, located in La Union,
+                            Philippines, which teaches full stack in 3.5 months for free.
+                            I am extremely passionate about learning new technologies,
+                            and I am always looking for opportunities to further expand my skills and grow as a developer.
                         </Typography>
                     </Paper>
                     <Box sx={{ my: 5 }}>
@@ -147,7 +148,7 @@ function Section() {
                     alignItems="stretch"
                     spacing={2}
                 >
-                    <Typography variant='h6' sx={{ mt: 3, textAlign: 'center' }}>Ryan's Portfolio</Typography>
+                    <Typography variant='h5' sx={{ mt: 3, textAlign: 'center' }}>Ryan's Portfolio</Typography>
                     <Stack
                         direction="row"
                         justifyContent="center"
