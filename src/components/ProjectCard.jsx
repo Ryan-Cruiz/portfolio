@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 function ProjectCard({ technologies, title, link }) {
     useEffect(() => {
@@ -58,5 +59,9 @@ function ProjectCard({ technologies, title, link }) {
         </>
     )
 }
-
+ProjectCard.propTypes = {
+    technologies: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+}
 export default ProjectCard

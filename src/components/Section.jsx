@@ -15,7 +15,7 @@ import Divider from '@mui/material/Divider';
 import github from '../assets/img/github.png';
 import gmail from '../assets/img/gmail.png';
 import linkedin from '../assets/img/linkedin.png';
-
+import PropTypes from 'prop-types';
 const WhatUsePaper = ({ title, languages }) => {
     return (
         <Paper elevation={1} sx={{ p: 1, textAlign: 'start', border: '1px solid #212121' }}>
@@ -43,6 +43,16 @@ const CertificationCard = ({ title, year }) => {
         </Paper>
     );
 }
+
+WhatUsePaper.propTypes = {
+    title: PropTypes.string.isRequired,
+    languages: PropTypes.string.isRequired,
+}
+CertificationCard.propTypes = {
+    title: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+}
+
 function Section() {
     // const imgs = ['ajax.png', 'bootstrap.png', 'codeigniter.png', 'HTML.png', 'JavaScript.png', 'jQuery.png', 'LAMP.png', 'mysql.png', 'RUBY.png', 'socket.png', 'sqlite.png']
     const contact_img = [
@@ -63,8 +73,6 @@ function Section() {
         },
 
     ];
-    const url = window.location.hostname;
-    const protocol = window.location.protocol;
     return (
         <>
             <Box component="main" sx={{ p: 3 }} >
@@ -78,7 +86,7 @@ function Section() {
                                 <Typography variant="h2" gutterBottom>
                                     I am Ryan Cruiz
                                 </Typography>
-                                <Typography variant="h4" gutterBottom>
+                                <Typography variant="h3" gutterBottom>
                                     Software Developer
                                 </Typography>
                             </Box>
@@ -127,7 +135,7 @@ function Section() {
                     </Box>
                 </Box>
                 <Box sx={{ my: 5 }}>
-                    <Typography variant='h4' gutterBottom sx={{ textAlign: 'center' }} id='projects'>Projects</Typography>
+                    <Typography variant='h4' gutterBottom sx={{ fontWeight: 'bold', textAlign: 'center' }} id='projects'>Projects</Typography>
                     <Grid container spacing={2} justifyContent="center" alignItems="center" sx={{ marginTop: '1rem' }}>
                         {projectData.map(data => (
                             <Grid key={data.link + '_project'} item sx={{ textAlign: 'center', margin: '5px' }}>
@@ -148,7 +156,7 @@ function Section() {
                     alignItems="stretch"
                     spacing={2}
                 >
-                    <Typography variant='h5' sx={{ mt: 3, textAlign: 'center' }}>Ryan's Portfolio</Typography>
+                    <Typography variant='h4' sx={{ mt: 3, textAlign: 'center' }}>Ryan&#39;s Portfolio</Typography>
                     <Stack
                         direction="row"
                         justifyContent="center"
@@ -185,7 +193,7 @@ function Section() {
                         spacing={2}
                     >
                         <Typography variant='body1' sx={{ textAlign: 'center' }}>Powered By <Link sx={{ color: 'whitesmoke' }} href='https://vercel.com/'>Vercel</Link></Typography>
-                        <Typography variant='body1' sx={{ textAlign: 'center' }}>© 2023 Ryan's Portfolio</Typography>
+                        <Typography variant='body1' sx={{ textAlign: 'center' }}>© 2023 Ryan&#39;s Portfolio</Typography>
                     </Stack>
 
                 </Stack >
