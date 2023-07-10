@@ -157,6 +157,8 @@ function Section() {
                         justifyContent="center"
                         alignItems="stretch"
                         spacing={2}
+                        useFlexGap
+                        flexWrap="wrap" 
                     >
                         <Link href="#about" sx={{ color: 'whitesmoke' }}>About</Link>
                         <Link href="#technologies" sx={{ color: 'whitesmoke' }}>Technologies</Link>
