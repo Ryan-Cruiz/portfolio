@@ -10,7 +10,8 @@
             "API",
             "AJAX"
         ],
-        "link": "wxtu9N6LRp8"
+        "link": "wxtu9N6LRp8",
+        "description": "An online shopping website created using CodeIgniter, HTML, CSS, jQuery in a span of a week."
     },
     {
         "title": "Multiplayer Game",
@@ -22,7 +23,8 @@
             "SocketIO",
             "NodeJS"
         ],
-        "link": "DP5ME8rbvTw"
+        "link": "DP5ME8rbvTw",
+        "description": "A pacman clone game with multiplayer and chatroom created using HTML, CSS, JavaScript, NodeJS, SocketIO, Express"
     },
     {
         "title": "Classroom",
@@ -35,7 +37,8 @@
             "JQuery",
             "SQLite"
         ],
-        "link": "KoW69iXbuAs"
+        "link": "KoW69iXbuAs",
+        "description": "Similar to google classroom website this was created using Ruby on Rails, HTML, CSS, jQuery, Bootstrap in a span of a week to think and create."
     },
     {
         "title": "Movie App",
@@ -47,6 +50,7 @@
             "React Bootstrap",
             "NodeJS"
         ],
-        "link": "6zhyMK7FObs"
+        "link": "6zhyMK7FObs",
+        "description": "A Movie App where you can browse and see reviews of a movie created using HTML, CSS, React, TMDB Api."
     }
 ]

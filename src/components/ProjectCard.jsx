@@ -7,7 +7,7 @@ import CardActionArea from '@mui/material/CardActionArea';
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-function ProjectCard({ technologies, title, link }) {
+function ProjectCard({ technologies, title, link, description }) {
     useEffect(() => {
         var vplayer = document.querySelectorAll(".vplayer");
 
@@ -37,7 +37,7 @@ function ProjectCard({ technologies, title, link }) {
     }, [])
     return (
         <>
-            <Card sx={{ maxWidth: 600, border: '1px solid #212121' }}>
+            <Card sx={{ maxWidth:600, border: '1px solid #212121' }}>
                 <div className='vplayer' data-v={link}></div>
                 <div className="plybtn"></div>
                 <CardActionArea>
@@ -50,7 +50,9 @@ function ProjectCard({ technologies, title, link }) {
                                 <Chip key={v + '_technologies'} label={v} color="primary" sx={{ margin: '2px' }} />
                             )
                         })}
-
+                        <Typography sx={{ mt: 1 }} variant="body1">
+                            { description }
+                        </Typography>
                     </CardContent>
                 </CardActionArea>
             </Card>
@@ -60,8 +62,9 @@ function ProjectCard({ technologies, title, link }) {
     )
 }
 ProjectCard.propTypes = {
-    technologies: PropTypes.string.isRequired,
+    technologies: PropTypes.array.isRequired,
     title: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
 }
 export default ProjectCard

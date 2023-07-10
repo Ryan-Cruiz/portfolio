@@ -12,13 +12,10 @@ import skillsData from '../api/whatuse.json';
 import certificateData from '../api/certificates.json';
 import FormContact from './FormContact';
 import Divider from '@mui/material/Divider';
-import github from '../assets/img/github.png';
-import gmail from '../assets/img/gmail.png';
-import linkedin from '../assets/img/linkedin.png';
 import PropTypes from 'prop-types';
 const WhatUsePaper = ({ title, languages }) => {
     return (
-        <Paper elevation={1} sx={{ p: 1, textAlign: 'start', border: '1px solid #212121' }}>
+        <Paper elevation={1} sx={{ p: 1, textAlign: 'start' }}>
             <div style={{ fontWeight: "bold", textAlign: 'start', marginBottom: '.5rem' }} > {title}:</div>
             {languages.map(item => (
                 <Chip key={item + '_chip'} color="primary" label={item} sx={{ margin: '.5px' }} />
@@ -46,7 +43,7 @@ const CertificationCard = ({ title, year }) => {
 
 WhatUsePaper.propTypes = {
     title: PropTypes.string.isRequired,
-    languages: PropTypes.string.isRequired,
+    languages: PropTypes.array.isRequired,
 }
 CertificationCard.propTypes = {
     title: PropTypes.string.isRequired,
@@ -59,17 +56,17 @@ function Section() {
         {
             title: 'Github',
             link: 'https://github.com/Ryan-Cruiz/',
-            img: github
+            img: 'https://github.com/Ryan-Cruiz/portfolio/blob/main/src/assets/img/github.png?raw=true'
         },
         {
             title: 'LinkedIn',
             link: 'https://www.linkedin.com/in/ryan-cruiz-9800a1243/',
-            img: linkedin
+            img: 'https://github.com/Ryan-Cruiz/portfolio/blob/main/src/assets/img/linkedin.png?raw=true'
         },
         {
             title: 'Gmail',
             link: 'ryancruiz97@gmail.com',
-            img: gmail
+            img: 'https://github.com/Ryan-Cruiz/portfolio/blob/main/src/assets/img/gmail.png?raw=true'
         },
 
     ];
@@ -114,35 +111,33 @@ function Section() {
                         </Typography>
                     </Paper>
                     <Box sx={{ my: 5 }}>
-                        <Typography variant='h4' gutterBottom sx={{ fontWeight: 'bold', textAlign: 'center' }} id='technologies'>Technologies</Typography>
                         <Stack direction="row" useFlexGap spacing={1} flexWrap="wrap" justifyContent="center" alignItems="flex-start">
-                            <Box sx={{ width: 500 }}>
-                                <Typography variant='h5' sx={{ mb: 2 }}>What I Use</Typography>
+                            <Box sx={{ flexGrow: '1' }}>
+                                <Typography variant='h4' gutterBottom sx={{ fontWeight: 'bold', textAlign: 'center' }} id='technologies'>Technologies</Typography>
                                 <Stack direction="column"
                                     justifyContent="center"
                                     alignItems="stretch"
-                                    spacing={1}>
+                                    spacing={0}
+                                    sx={{ border: '1px solid #212121', borderRadius: '5px' }}>
                                     {skillsData.map((skill) => (
                                         <WhatUsePaper key={skill.title + '_skillsData'} title={skill.title} languages={skill.languages} />
                                     ))}
                                 </Stack>
                             </Box>
-                            <Box sx={{ width: 500 }}>
-                                <Typography variant='h5' sx={{ mb: 2 }}>Certifications</Typography>
-                                <CertificationCard title='Village88' year='July 2022 - October 2022' certificates={[]} />
+                            <Box sx={{ flexGrow: '1' }}>
+                                <Typography gutterBottom id='certifications' variant='h4' sx={{ fontWeight: 'bold', textAlign: 'center' }}>Certifications</Typography>
+                                <CertificationCard title='Village88' year='July 2022 - October 2022' />
                             </Box>
                         </Stack>
                     </Box>
                 </Box>
                 <Box sx={{ my: 5 }}>
                     <Typography variant='h4' gutterBottom sx={{ fontWeight: 'bold', textAlign: 'center' }} id='projects'>Projects</Typography>
-                    <Grid container spacing={2} justifyContent="center" alignItems="center" sx={{ marginTop: '1rem' }}>
+                    <Stack direction="row" useFlexGap spacing={1} flexWrap="wrap" justifyContent="center" alignItems="flex-start" sx={{marginTop:'1rem'}}>
                         {projectData.map(data => (
-                            <Grid key={data.link + '_project'} item sx={{ textAlign: 'center', margin: '5px' }}>
-                                <ProjectCard title={data.title} technologies={data.technologies} link={data.link} />
-                            </Grid>
+                                <ProjectCard key={data.link + '_project'}  title={data.title} technologies={data.technologies} link={data.link} description={data.description} />
                         ))}
-                    </Grid>
+                    </Stack>
                 </Box>
                 <Box sx={{ margin: '0 auto', width: '100%' }}>
                     <Typography variant='h4' gutterBottom sx={{ fontWeight: 'bold', textAlign: 'center' }} id='contact'>Contact</Typography>
@@ -164,8 +159,10 @@ function Section() {
                         spacing={2}
                     >
                         <Link href="#about" sx={{ color: 'whitesmoke' }}>About</Link>
-                        <Link href="/#projects" sx={{ color: 'whitesmoke' }}>Projects</Link>
-                        <Link href="/#contact" sx={{ color: 'whitesmoke' }}>Contact</Link>
+                        <Link href="#technologies" sx={{ color: 'whitesmoke' }}>Technologies</Link>
+                        <Link href="#certifications" sx={{ color: 'whitesmoke' }}>Certifications</Link>
+                        <Link href="#projects" sx={{ color: 'whitesmoke' }}>Projects</Link>
+                        <Link href="#contact" sx={{ color: 'whitesmoke' }}>Contact</Link>
                     </Stack>
                     <Divider color='whitesmoke' />
                     <Stack

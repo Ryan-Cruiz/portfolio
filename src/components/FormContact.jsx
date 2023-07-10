@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import SendIcon from '@mui/icons-material/Send';
 function FormContact() {
     const form = useRef();
@@ -37,6 +38,7 @@ function FormContact() {
 
     return (
         <Paper elevation={3} sx={{ p: 3, margin: '1rem auto', border: '1px solid #212121' }}>
+            <Typography variant='body1'>If you have any question or want to reach me fill this up:</Typography>
             <form ref={form} onSubmit={sendEmail}>
                 <Stack direction='column' spacing={1}>
                     <TextField required id="name" type='text' name='from_name' label="Name" variant="standard" />

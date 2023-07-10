@@ -15,7 +15,7 @@ import Typography from '@mui/material/Typography';
 import { Link } from '@mui/material';
 
 const drawerWidth = 240;
-const navItems = ['About', 'Projects', 'Contact'];
+const navItems = ['About','Technologies','Certifications', 'Projects', 'Contact'];
 
 function DrawerAppBar(props) {
 	const { window } = props;
