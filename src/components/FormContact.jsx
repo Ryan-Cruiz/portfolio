@@ -6,17 +6,21 @@ import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import SendIcon from '@mui/icons-material/Send';
+import CircularProgress from '@mui/material/CircularProgress';
+import { useState } from 'react';
 function FormContact() {
     const form = useRef();
-    const btn = document.getElementById('contact-btn');
+    const [isSending,setSend] = useState(false);
     const sendEmail = (e) => {
         e.preventDefault();
-        btn.text = 'Sending...';
+        const btn = document.getElementById('contact-btn');
         const name = document.getElementById('name');
         const email = document.getElementById('email');
         const message = document.getElementById('message');
-        btn.setAttribute('disabled', true);
         if (name.value !== '' || email.value !== '' || message !== '') {
+            setSend(prev => !prev);
+            btn.setAttribute('disabled','');
+            // alert('hey');
             emailjs.sendForm('service_vhaba8s', 'template_hfrdtxs', form.current, '9ROh7b-rJGLYC6Ovp')
                 .then((result) => {
                     alert('Delivered!');
@@ -24,14 +28,17 @@ function FormContact() {
                     name.value = '';
                     email.value = '';
                     message.value = '';
-                    btn.text = 'Send';
+                    setSend(prev => !prev);
+                    btn.removeAttribute('disabled');
                 }, (error) => {
                     alert('Failed!');
                     console.log(error.text);
-                    btn.text = 'Send';
-                    btn.setAttribute('disabled', false);
+                    setSend(prev => !prev);
+                    btnText.removeAttribute('disabled');
                 });
         } else {
+            setSend(prev => !prev);
+            btnText.removeAttribute('disabled');
             alert('Please Fill Up the Following')
         }
     };
@@ -53,8 +60,8 @@ function FormContact() {
                         rows={4}
                         variant="standard"
                     />
-                    <Button type='submit' id='contact-btn' variant="contained" endIcon={<SendIcon />}>
-                        Send
+                    <Button id='contact-btn' type='submit' variant="contained" endIcon={isSending ?  <CircularProgress color="secondary" size={15} /> : <SendIcon />}>
+                        {isSending ? 'Sending' : 'Send' }
                     </Button>
                 </Stack>
             </form>

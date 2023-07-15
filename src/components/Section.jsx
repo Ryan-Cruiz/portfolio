@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
+import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import profile from '../assets/img/profile.jpg';
@@ -86,6 +87,9 @@ function Section() {
                                 <Typography variant="h3" gutterBottom>
                                     Software Developer
                                 </Typography>
+                                <Button component={Link} href="https://drive.google.com/file/d/1lSYHtxAfvTqqdRtxl-Z-P-AJPKnbFhwk/view?usp=sharing" target='_blank' variant="contained" color="primary">
+                                    See my CV
+                                </Button>
                             </Box>
                         </Grid>
                         <Grid item md={6} sx={{ textAlign: 'center' }} className='img-profile'>
